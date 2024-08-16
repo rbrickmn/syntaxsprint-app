@@ -1,8 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+import TypingGame from "./components/TypingGame/TypingGame";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <TypingGame />
+    </>
+  );
 }
 
 export default App;
