@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./App.css";
-import TypingGame from "./components/TypingGame/TypingGame";
+
+// Component imports
+import SyntaxSprint from "./components/SyntaxSprint/SyntaxSprint";
 
 function App() {
   return (
     <>
-      <TypingGame />
+      <SyntaxSprint />
     </>
   );
 }
