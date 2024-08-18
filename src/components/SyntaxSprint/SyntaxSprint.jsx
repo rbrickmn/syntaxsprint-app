@@ -4,6 +4,14 @@ import "prismjs/themes/prism.css";
 import "./SyntaxSprint.css";
 
 const SyntaxSprint = () => {
+  const codeBlocks = [
+    `for (let i = 0; i < 10; i++) {\nconsole.log(i);\n}`,
+    `const greet = (name) => {\nreturn \`Hello, \${name}!\`;\n};`,
+    `let counter = 0;\nwhile (counter < 5) {\nconsole.log(counter);\ncounter++;\n};`,
+    `const syntaxSprint = () => {\nconsole.log("Get typing!");\n};`,
+    `if (condition) {\nconsole.log("Condition met!");\n} else {\nconsole.log("Condition not met.");\n};`,
+  ];
+
   const [input, setInput] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [startTime, setStartTime] = useState(null);
@@ -14,15 +22,13 @@ const SyntaxSprint = () => {
   const [losses, setLosses] = useState(0);
   const [gameStatus, setGameStatus] = useState("playing");
   const [completionTime, setCompletionTime] = useState(null);
+  const [code, setCode] = useState(codeBlocks[0]); // Initially set to the first block
 
-  const code = `const syntaxSprint = () => {\nconsole.log("Get typing!");\n};`;
-
-  // Ref to track the try again/play again button
   const tryAgainButtonRef = useRef(null);
 
   useEffect(() => {
     Prism.highlightAll();
-  }, []);
+  }, [code]);
 
   useEffect(() => {
     if (startTime && timeLeft > 0 && gameStatus === "playing") {
@@ -107,7 +113,11 @@ const SyntaxSprint = () => {
     setCompletionTime(null);
     setGameStatus("playing");
 
-    // Blur the button to prevent spacebar from triggering it
+    // Randomize the code block
+    const randomCode =
+      codeBlocks[Math.floor(Math.random() * codeBlocks.length)];
+    setCode(randomCode);
+
     tryAgainButtonRef.current.blur();
   };
 
@@ -120,11 +130,12 @@ const SyntaxSprint = () => {
           <>
             {gameStatus === "playing" &&
               code.split("").map((char, idx) => {
-                let color = "grey";
+                let color = "grey"; // Default color for untyped characters
+
                 if (idx < currentIndex) {
-                  color = input[idx] === char ? "green" : "red";
+                  color = input[idx] === char ? "green" : "red"; // Green for correct, red for incorrect
                 } else if (idx === currentIndex) {
-                  color = "black";
+                  color = "black"; // Current letter in black
                 }
 
                 return (
