@@ -7,7 +7,7 @@ const SettingsPanel = ({ onClose, onResetScores }) => {
       <div className="settings-container">
         <div className="settings-header">
           <h2>Settings</h2>
-          <button className="close-button" onClick={onClose}>
+          <button className="close-button" onClick={onClose} title="Close">
             &times;
           </button>
         </div>
@@ -16,10 +16,11 @@ const SettingsPanel = ({ onClose, onResetScores }) => {
           <button
             className="reset-scores-button"
             onClick={onResetScores} // Call resetScores function on click
+            title="Reset scores"
           >
             Reset scores
           </button>
-          <p>More coming soon!</p>
+          <p className="coming-soon">More coming soon!</p>
         </div>
       </div>
     </div>
