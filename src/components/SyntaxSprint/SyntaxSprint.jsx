@@ -19,8 +19,12 @@ const SyntaxSprint = () => {
   const [wpm, setWpm] = useState(0);
   const [timeLeft, setTimeLeft] = useState(30);
   const [mistakes, setMistakes] = useState(0);
-  const [wins, setWins] = useState(0);
-  const [losses, setLosses] = useState(0);
+  const [wins, setWins] = useState(
+    () => Number(localStorage.getItem("wins")) || 0
+  );
+  const [losses, setLosses] = useState(
+    () => Number(localStorage.getItem("losses")) || 0
+  );
   const [gameStatus, setGameStatus] = useState("playing");
   const [completionTime, setCompletionTime] = useState(null);
   const [code, setCode] = useState(codeBlocks[0]);
@@ -32,6 +36,8 @@ const SyntaxSprint = () => {
   const resetScores = () => {
     setWins(0);
     setLosses(0);
+    localStorage.setItem("wins", 0);
+    localStorage.setItem("losses", 0);
   };
 
   useEffect(() => {
@@ -110,6 +116,15 @@ const SyntaxSprint = () => {
       }
     }
   }, [currentIndex, startTime, gameStatus]);
+
+  // Persist wins and losses to localStorage when they change
+  useEffect(() => {
+    localStorage.setItem("wins", wins);
+  }, [wins]);
+
+  useEffect(() => {
+    localStorage.setItem("losses", losses);
+  }, [losses]);
 
   const handleTryAgain = () => {
     setInput("");

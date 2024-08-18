@@ -20,6 +20,9 @@ const SettingsPanel = ({ onClose, onResetScores }) => {
           >
             Reset scores
           </button>
+
+          <h3>Personalization</h3>
+
           <p className="coming-soon">More coming soon!</p>
         </div>
       </div>
