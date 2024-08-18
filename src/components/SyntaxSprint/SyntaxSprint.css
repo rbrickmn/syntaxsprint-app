@@ -49,3 +49,17 @@
 .try-again-button:hover {
   background-color: #0056b3;
 }
+
+.button-section {
+  vertical-align: middle;
+}
+
+.settings-button,
+.settings-icon {
+  display: inline;
+  vertical-align: middle;
+}
+
+.settings-icon {
+  margin-left: 0.5rem;
+}
