@@ -52,6 +52,8 @@
 }
 
 .button-section {
+  display: flex;
+  justify-content: center;
   vertical-align: middle;
 }
 
@@ -61,6 +63,20 @@
   vertical-align: middle;
 }
 
+.settings-button {
+  position: relative;
+  border: none;
+  background: none;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.settings-button:hover .settings-icon {
+  transform: rotate(180deg); /* Rotate the icon */
+}
+
 .settings-icon {
-  margin-left: 0.5rem;
+  margin: 0.5rem;
+  transition: transform 2s ease; /* Smooth transition for rotation */
+  vertical-align: middle;
 }

@@ -69,3 +69,18 @@
 .reset-scores-button:hover {
   background-color: #cccccc;
 }
+
+.settings-label {
+  display: inline;
+  vertical-align: middle;
+}
+
+.theme-choices {
+  margin-left: 0.5rem;
+  padding: 0.2rem;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: none;
+  vertical-align: middle;
+}

@@ -23,6 +23,12 @@ const SettingsPanel = ({ onClose, onResetScores }) => {
 
           <h3>Personalization</h3>
 
+          <p className="settings-label">Color theme (Doesn't work yet):</p>
+          <select name="theme" id="theme" className="theme-choices">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+
           <p className="coming-soon">More coming soon!</p>
         </div>
       </div>
