@@ -8,7 +8,9 @@ const AppContainer = () => {
   return (
     <>
       <div className="window-container">
-        <SyntaxSprint />
+        <div className="game-wrapper">
+          <SyntaxSprint />
+        </div>
       </div>
     </>
   );

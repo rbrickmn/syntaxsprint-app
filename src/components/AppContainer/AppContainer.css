@@ -1,0 +1,93 @@
+/* Container taking full screen */
+.window-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f5f5;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Game wrapper with fixed width */
+.game-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  min-height: 500px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* The text box container inside the game wrapper */
+.text-box-container {
+  width: 100%;
+  max-width: 600px; /* Fixed width for the text box */
+  min-height: 200px;
+  padding: 20px;
+  background-color: #eaeaea;
+  border-radius: 8px;
+  overflow-wrap: break-word; /* Ensures long words or text will wrap */
+  word-wrap: break-word; /* For compatibility with older browsers */
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1200px) {
+  .game-wrapper {
+    max-width: 700px;
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 992px) {
+  .game-wrapper {
+    max-width: 600px;
+    min-height: 400px;
+  }
+
+  .text-box-container {
+    max-width: 500px; /* Adjusting fixed width for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .game-wrapper {
+    max-width: 500px;
+    min-height: 350px;
+  }
+
+  .text-box-container {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .game-wrapper {
+    max-width: 400px;
+    min-height: 300px;
+  }
+
+  .text-box-container {
+    max-width: 350px;
+  }
+}
+
+/* Further adjustments for small mobile screens */
+@media (max-width: 400px) {
+  .game-wrapper {
+    max-width: 350px;
+    min-height: 280px;
+  }
+
+  .text-box-container {
+    max-width: 300px;
+  }
+}

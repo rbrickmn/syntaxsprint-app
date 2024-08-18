@@ -5,7 +5,7 @@ import "./SyntaxSprint.css";
 
 const SyntaxSprint = () => {
   const codeBlocks = [
-    `for (let i = 0; i < 10; i++) {\nconsole.log(i);\n}`,
+    `for (let i = 0; i < 10; i++) {\nconsole.log(i);\n};`,
     `const greet = (name) => {\nreturn \`Hello, \${name}!\`;\n};`,
     `let counter = 0;\nwhile (counter < 5) {\nconsole.log(counter);\ncounter++;\n};`,
     `const syntaxSprint = () => {\nconsole.log("Get typing!");\n};`,
@@ -131,15 +131,17 @@ const SyntaxSprint = () => {
             {gameStatus === "playing" &&
               code.split("").map((char, idx) => {
                 let color = "grey"; // Default color for untyped characters
+                let currentClass = ""; // Default for current character class
 
                 if (idx < currentIndex) {
                   color = input[idx] === char ? "green" : "red"; // Green for correct, red for incorrect
                 } else if (idx === currentIndex) {
                   color = "black"; // Current letter in black
+                  currentClass = "current-char"; // Apply the underline for the current character
                 }
 
                 return (
-                  <span key={idx} style={{ color }}>
+                  <span key={idx} className={currentClass} style={{ color }}>
                     {char === "\n" ? <br /> : char}
                   </span>
                 );
