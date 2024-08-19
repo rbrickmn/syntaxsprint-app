@@ -72,11 +72,11 @@
 }
 
 .settings-button:hover .settings-icon {
-  transform: rotate(180deg); /* Rotate the icon */
+  transform: rotate(90deg); /* Rotate the icon */
 }
 
 .settings-icon {
   margin: 0.5rem;
-  transition: transform 2s ease; /* Smooth transition for rotation */
+  transition: transform 1s ease; /* Smooth transition for rotation */
   vertical-align: middle;
 }
