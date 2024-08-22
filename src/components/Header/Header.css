@@ -1,0 +1,19 @@
+.header-container {
+  display: flex;
+  align-content: center;
+  vertical-align: middle;
+  margin: 2rem 2rem 2rem 2rem;
+}
+
+.logo,
+.logo-svg {
+  vertical-align: middle;
+}
+
+.logo {
+  user-select: none;
+}
+
+.logo-svg {
+  margin-left: 0.5rem;
+}
