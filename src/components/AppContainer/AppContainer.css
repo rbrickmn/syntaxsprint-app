@@ -14,6 +14,7 @@
 /* Game wrapper with fixed width */
 .game-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: white;
