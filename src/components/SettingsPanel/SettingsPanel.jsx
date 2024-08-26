@@ -1,7 +1,13 @@
 import React from "react";
 import "./SettingsPanel.css";
 
-const SettingsPanel = ({ onClose, onResetScores }) => {
+const SettingsPanel = ({ onClose, onResetScores, onTimeLimitChange }) => {
+  // Function to handle timer change
+  const handleTimeChange = (e) => {
+    const selectedTime = parseInt(e.target.value);
+    onTimeLimitChange(selectedTime);
+  };
+
   return (
     <div className="settings-overlay">
       <div className="settings-container">
@@ -25,7 +31,12 @@ const SettingsPanel = ({ onClose, onResetScores }) => {
 
           <p className="settings-label">Time limit:</p>
 
-          <select name="time-limit" id="time-limit" className="choices">
+          <select
+            name="time-limit"
+            id="time-limit"
+            className="choices"
+            onChange={handleTimeChange} // Call handleTimeChange function on selection
+          >
             <option value="15">15 seconds</option>
             <option value="30">30 seconds</option>
             <option value="60">60 seconds</option>

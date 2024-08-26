@@ -29,8 +29,15 @@ const SyntaxSprint = () => {
   const [completionTime, setCompletionTime] = useState(null);
   const [code, setCode] = useState(codeBlocks[0]);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [selectedTimeLimit, setSelectedTimeLimit] = useState("15");
 
   const tryAgainButtonRef = useRef(null);
+
+  // Function to handle time limit selection
+  const handleTimeLimitchange = (time) => {
+    setSelectedTimeLimit(time);
+    setTimeLeft(time);
+  };
 
   // Function to reset wins and losses
   const resetScores = () => {
@@ -131,7 +138,7 @@ const SyntaxSprint = () => {
     setCurrentIndex(0);
     setStartTime(null);
     setWpm(0);
-    setTimeLeft(30);
+    setTimeLeft(selectedTimeLimit);
     setMistakes(0);
     setCompletionTime(null);
     setGameStatus("playing");
@@ -235,6 +242,7 @@ const SyntaxSprint = () => {
         <SettingsPanel
           onClose={() => setSettingsOpen(false)}
           onResetScores={resetScores} // Pass the resetScores function
+          onTimeLimitChange={handleTimeLimitchange}
         />
       )}
     </div>
