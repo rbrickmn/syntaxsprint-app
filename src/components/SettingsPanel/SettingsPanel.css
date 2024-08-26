@@ -58,25 +58,27 @@
 }
 
 .reset-scores-button {
+  display: block;
   padding: 10px 20px;
-  background-color: #dcdcdc;
+  background-color: #fa3333;
+  color: hsl(0, 0%, 100%);
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-bottom: 20px;
+  margin: 0.5rem 0 1rem 0;
   transition: background-color 0.3s;
 }
 
 .reset-scores-button:hover {
-  background-color: #cccccc;
+  background-color: #f92020;
 }
 
 .settings-label {
-  display: inline;
+  display: inline-block;
   vertical-align: middle;
 }
 
-.theme-choices {
+.choices {
   margin-left: 0.5rem;
   padding: 0.2rem;
   border: none;

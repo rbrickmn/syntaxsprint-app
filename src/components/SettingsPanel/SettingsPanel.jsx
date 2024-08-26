@@ -13,6 +13,24 @@ const SettingsPanel = ({ onClose, onResetScores }) => {
         </div>
         <div className="settings-content">
           <h3>Game</h3>
+          <p className="settings-label">Programming Language:</p>
+
+          <select name="language" id="language" className="choices">
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="c++">C++</option>
+            <option value="java">Java</option>
+            <option value="php">PHP</option>
+          </select>
+
+          <p className="settings-label">Time limit:</p>
+
+          <select name="time-limit" id="time-limit" className="choices">
+            <option value="15">15 seconds</option>
+            <option value="30">30 seconds</option>
+            <option value="60">60 seconds</option>
+          </select>
+
           <button
             className="reset-scores-button"
             onClick={onResetScores} // Call resetScores function on click
@@ -24,7 +42,7 @@ const SettingsPanel = ({ onClose, onResetScores }) => {
           <h3>Personalization</h3>
 
           <p className="settings-label">Color theme (Doesn't work yet):</p>
-          <select name="theme" id="theme" className="theme-choices">
+          <select name="theme" id="theme" className="choices">
             <option value="light">Light</option>
             <option value="dark">Dark</option>
           </select>

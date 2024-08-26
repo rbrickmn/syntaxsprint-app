@@ -30,6 +30,7 @@
 
 .stat-box {
   text-align: center;
+  user-select: none;
 }
 
 .stat-number {
@@ -46,6 +47,7 @@
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s;
+  user-select: none;
 }
 
 .try-again-button:hover {
