@@ -1,3 +1,5 @@
+// Not used yet! This will be the home of all the languages and their code blocks soon
+
 export const languages = {
   javascript: [
     `for (let i = 0; i < 10; i++) {\nconsole.log(i);\n};`,

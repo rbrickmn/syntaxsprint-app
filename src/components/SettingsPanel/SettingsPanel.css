@@ -1,4 +1,4 @@
-/* SettingsPanel.css */
+
 
 .settings-overlay {
   position: fixed;
@@ -12,7 +12,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .settings-container {
@@ -86,5 +86,5 @@
   outline: none;
   background: none;
   vertical-align: middle;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }

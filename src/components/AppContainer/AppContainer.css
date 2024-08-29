@@ -1,3 +1,31 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  margin: 1rem;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.made-by {
+  border-radius: 25px;
+  padding: 0;
+  transition: all 0.3s;
+  cursor: unset;
+}
+
+.made-by-svg {
+  display: inline;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+
 /* Container taking full screen */
 .window-container {
   display: flex;

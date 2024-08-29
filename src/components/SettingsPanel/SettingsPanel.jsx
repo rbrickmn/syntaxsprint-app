@@ -6,6 +6,7 @@ const SettingsPanel = ({ onClose, onResetScores, onTimeLimitChange }) => {
   const handleTimeChange = (e) => {
     const selectedTime = parseInt(e.target.value);
     onTimeLimitChange(selectedTime);
+    localStorage.setItem("timeLimit", selectedTime);
   };
 
   return (
@@ -41,6 +42,7 @@ const SettingsPanel = ({ onClose, onResetScores, onTimeLimitChange }) => {
             id="time-limit"
             className="choices"
             onChange={handleTimeChange} // Call handleTimeChange function on selection
+            defaultValue={localStorage.getItem("timeLimit") || "15"}
           >
             <option value="15">15 seconds</option>
             <option value="30">30 seconds</option>

@@ -17,7 +17,9 @@ const SyntaxSprint = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [startTime, setStartTime] = useState(null);
   const [wpm, setWpm] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(30);
+  const [timeLeft, setTimeLeft] = useState(
+    localStorage.getItem("timeLimit") || 15
+  );
   const [mistakes, setMistakes] = useState(0);
   const [wins, setWins] = useState(
     () => Number(localStorage.getItem("wins")) || 0
@@ -29,7 +31,9 @@ const SyntaxSprint = () => {
   const [completionTime, setCompletionTime] = useState(null);
   const [code, setCode] = useState(codeBlocks[0]);
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [selectedTimeLimit, setSelectedTimeLimit] = useState("15");
+  const [selectedTimeLimit, setSelectedTimeLimit] = useState(
+    localStorage.getItem("selectedTimeLimit") || "15"
+  );
 
   const tryAgainButtonRef = useRef(null);
 
@@ -37,6 +41,7 @@ const SyntaxSprint = () => {
   const handleTimeLimitchange = (time) => {
     setSelectedTimeLimit(time);
     setTimeLeft(time);
+    localStorage.setItem("selectedTimeLimit", time);
   };
 
   // Function to reset wins and losses
@@ -142,7 +147,7 @@ const SyntaxSprint = () => {
     setCurrentIndex(0);
     setStartTime(null);
     setWpm(0);
-    setTimeLeft(selectedTimeLimit);
+    setTimeLeft(localStorage.getItem("timeLimit") || 15);
     setMistakes(0);
     setCompletionTime(null);
     setGameStatus("playing");
