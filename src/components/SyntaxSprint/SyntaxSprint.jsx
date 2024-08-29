@@ -41,10 +41,14 @@ const SyntaxSprint = () => {
 
   // Function to reset wins and losses
   const resetScores = () => {
-    setWins(0);
-    setLosses(0);
-    localStorage.setItem("wins", 0);
-    localStorage.setItem("losses", 0);
+    let text =
+      "Are you sure you want to reset your scores?\nThis cannot be undone!";
+    if (confirm(text)) {
+      setWins(0);
+      setLosses(0);
+      localStorage.setItem("wins", 0);
+      localStorage.setItem("losses", 0);
+    }
   };
 
   useEffect(() => {

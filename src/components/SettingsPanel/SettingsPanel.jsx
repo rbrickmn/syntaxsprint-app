@@ -19,15 +19,20 @@ const SettingsPanel = ({ onClose, onResetScores, onTimeLimitChange }) => {
         </div>
         <div className="settings-content">
           <h3>Game</h3>
-          <p className="settings-label">Programming Language:</p>
+          <p className="settings-label">
+            Programming Language:{" "}
+            <span style={{ cursor: "not-allowed" }}>
+              <strong>Coming soon!</strong>
+            </span>
+          </p>
 
-          <select name="language" id="language" className="choices">
+          {/* <select name="language" id="language" className="choices">
             <option value="javascript">JavaScript</option>
             <option value="python">Python</option>
             <option value="c++">C++</option>
             <option value="java">Java</option>
             <option value="php">PHP</option>
-          </select>
+          </select> */}
 
           <p className="settings-label">Time limit:</p>
 
