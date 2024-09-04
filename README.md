@@ -1,6 +1,23 @@
-# Introduction
+This project is just beginning! I have lots of new features planned - see "Goals" to find out what I'm working on!
 
-This project is just beginning, so I'm just planning everything out! I look forward to bringing this one to life :)
+# Introduction
+Welcome to SyntaxSprint! A syntax-based typing game that allows you to practice common code blocks, see your typing speed (WPM), and improve your knowledge by trying to lower your mistakes made!
+
+# Features
+ This React application operates on a single page and includes the following features:
+
+- The game itself
+- JavaScript language syntax (more languages coming sooon!)
+- Words per minute (WPM) counter
+- Mistakes counter
+- Wins/losses counter
+- Settings menu
+- Option to reset your scores
+
+# Technologies used
+- [React](https://www.reactjs.org)
+- [Prism](https://prismjs.com/)
+- [Vite](https://vitejs.dev/)
 
 # Goals
 
