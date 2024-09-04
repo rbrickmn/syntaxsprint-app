@@ -11,6 +11,8 @@ const SyntaxSprint = () => {
     `let counter = 0;\nwhile (counter < 5) {\nconsole.log(counter);\ncounter++;\n};`,
     `const syntaxSprint = () => {\nconsole.log("Get typing!");\n};`,
     `if (condition) {\nconsole.log("Condition met!");\n} else {\nconsole.log("Condition not met.");\n};`,
+    `function checkEven(number) {\nif (number % 2 === 0) {\nconsole.log("Even");\n} else {\nconsole.log("Odd");\n}\n};`,
+    `const age = 20;\nconst canVote = age >= 18 ? "Yes" : "No";\nconsole.log(canVote);\n};`,
   ];
 
   const [input, setInput] = useState("");
