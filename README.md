@@ -1,3 +1,6 @@
+# SyntaxSprint
+![image](https://github.com/user-attachments/assets/6477d8f6-96e5-4d16-a284-8d9cbcdd84f2)
+
 This project is just beginning! I have lots of new features planned - see "Goals" to find out what I'm working on!
 
 # Introduction
