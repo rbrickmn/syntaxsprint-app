@@ -3,17 +3,10 @@ import Prism from "prismjs";
 import "prismjs/themes/prism.css";
 import "./SyntaxSprint.css";
 import SettingsPanel from "../SettingsPanel/SettingsPanel";
+import { jsSnippets } from "../../assets/js-snippets";
 
 const SyntaxSprint = () => {
-  const codeBlocks = [
-    `for (let i = 0; i < 10; i++) {\nconsole.log(i);\n};`,
-    `const greet = (name) => {\nreturn \`Hello, \${name}!\`;\n};`,
-    `let counter = 0;\nwhile (counter < 5) {\nconsole.log(counter);\ncounter++;\n};`,
-    `const syntaxSprint = () => {\nconsole.log("Get typing!");\n};`,
-    `if (condition) {\nconsole.log("Condition met!");\n} else {\nconsole.log("Condition not met.");\n};`,
-    `function checkEven(number) {\nif (number % 2 === 0) {\nconsole.log("Even");\n} else {\nconsole.log("Odd");\n}\n};`,
-    `const age = 20;\nconst canVote = age >= 18 ? "Yes" : "No";\nconsole.log(canVote);\n};`,
-  ];
+  const codeBlocks = jsSnippets;
 
   const [input, setInput] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
