@@ -1,4 +1,3 @@
-import React from "react";
 import "./SettingsPanel.css";
 
 const SettingsPanel = ({ onClose, onResetScores, onTimeLimitChange }) => {
