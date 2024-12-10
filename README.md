@@ -19,7 +19,6 @@ Welcome to SyntaxSprint! A syntax-based typing game that allows you to practice 
 
 # Technologies used
 - [React](https://www.reactjs.org)
-- [Prism](https://prismjs.com/)
 - [Vite](https://vitejs.dev/)
 
 # Goals
