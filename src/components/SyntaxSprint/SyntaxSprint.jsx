@@ -164,13 +164,18 @@ const SyntaxSprint = () => {
           <>
             {gameStatus === "playing" &&
               code.split("").map((char, idx) => {
-                let color = "grey"; // Default color for untyped characters
+                // Access the CSS variable
+                let color = getComputedStyle(document.documentElement).getPropertyValue('--untyped-color') || "grey"; // Default color for untyped characters
+                let colorCorrectChar = getComputedStyle(document.documentElement).getPropertyValue('--correct-character-color') || "green";
+                let colorCurrentChar = getComputedStyle(document.documentElement).getPropertyValue('--current-character-color') || "black";
+
+
                 let currentClass = ""; // Default for current character class
 
                 if (idx < currentIndex) {
-                  color = input[idx] === char ? "green" : "red"; // Green for correct, red for incorrect
+                  color = input[idx] === char ? colorCorrectChar : "red"; // Green for correct, red for incorrect
                 } else if (idx === currentIndex) {
-                  color = "black"; // Current letter in black
+                  color = colorCurrentChar; // Current letter in black
                   currentClass = "current-char"; // Apply the underline for the current character
                 }
 

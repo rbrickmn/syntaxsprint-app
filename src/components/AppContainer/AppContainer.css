@@ -1,12 +1,16 @@
 footer {
   position: absolute;
   bottom: 0;
-  margin: 1rem;
+  margin: 1rem; 
+}
+
+footer button {
+  color: var(--text);
 }
 
 .footer-link {
   text-decoration: none;
-  color: black;
+  color: var(--text);
 }
 
 .footer-link:hover {
@@ -47,7 +51,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: var(--background-container);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -64,7 +68,7 @@ footer {
   max-width: 600px; /* Fixed width for the text box */
   min-height: 200px;
   padding: 20px;
-  background-color: #eaeaea;
+  background-color: var(--background-text-box);
   border-radius: 8px;
   overflow-wrap: break-word; /* Ensures long words or text will wrap */
   word-wrap: break-word; /* For compatibility with older browsers */

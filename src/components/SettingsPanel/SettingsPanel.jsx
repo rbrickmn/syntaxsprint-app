@@ -1,12 +1,28 @@
 import "./SettingsPanel.css";
+import { useState, useEffect } from "react";
 
 const SettingsPanel = ({ onClose, onResetScores, onTimeLimitChange }) => {
+
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
   // Function to handle timer change
   const handleTimeChange = (e) => {
     const selectedTime = parseInt(e.target.value);
     onTimeLimitChange(selectedTime);
     localStorage.setItem("timeLimit", selectedTime);
   };
+
+
+
+  const changeTheme = (event)=> {
+    const selectedTheme = event.target.value;
+     setTheme(selectedTheme);
+     localStorage.setItem("theme", selectedTheme);
+  }
 
   return (
     <div className="settings-overlay">
@@ -58,8 +74,8 @@ const SettingsPanel = ({ onClose, onResetScores, onTimeLimitChange }) => {
 
           <h3>Personalization</h3>
 
-          <p className="settings-label">Color theme (Doesn't work yet):</p>
-          <select name="theme" id="theme" className="choices">
+          <p className="settings-label">Color theme:</p>
+          <select name="theme" id="theme" className="choices" onChange={changeTheme} value={theme}>          
             <option value="light">Light</option>
             <option value="dark">Dark</option>
           </select>
