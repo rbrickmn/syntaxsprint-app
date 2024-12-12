@@ -3,9 +3,50 @@
 :root {
   --text: #091009;
   --background: #f6faf7;
+  --background-container: white;
   --primary: #091009;
   --secondary: #a9d0c4;
   --accent: #8abfb8;
+  
+  --background-text-box: #eaeaea;
+  --background-settings-overlay: rgba(0, 0, 0, 0.5);/* Semi-black background */
+  --background-settings: #fff;
+  
+  --background-text-block: #f4f4f4;
+
+  --button-try-again-text-color : white;
+  --button-try-again-color-hover: #54a858;
+
+  --background-reset-scores: #fa3333;
+  --text-reset-scores : #fff;
+  --hover-reset-scores: #f92020;
+
+  
+
+  --untyped-color: gray;
+  --correct-character-color: green;
+  --current-character-color: black;
+
+
+
+}
+
+[data-theme='dark'] {
+  --text: #cac4c7;
+  --background: rgb(44, 43, 43);
+  --background-container: rgb(10, 6, 20);
+  --primary: #f6faf7;
+  --secondary: #8abfb8;
+  --accent: #a9d0c4;
+
+  --button-try-again-text-color: black;
+
+  --background-settings-overlay: rgba(202, 183, 183, 0.5);
+
+  --background-settings: #0d1d2b;
+  --background-text-block: #1F1F1F;
+  --current-character-color: #C5C900;
+
 }
 
 * {

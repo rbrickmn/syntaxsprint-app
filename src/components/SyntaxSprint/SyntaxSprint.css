@@ -6,7 +6,7 @@
 }
 
 .text-block {
-  background-color: #f4f4f4;
+  background-color: var(--background-text-block);
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -43,7 +43,7 @@
   font-size: 1em;
   cursor: pointer;
   background-color: var(--primary);
-  color: white;
+  color: var(--button-try-again-text-color);
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s;
@@ -51,7 +51,7 @@
 }
 
 .try-again-button:hover {
-  background-color: #54a858;
+  background-color: var(--button-try-again-color-hover);
 }
 
 .button-section {
