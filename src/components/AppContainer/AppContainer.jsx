@@ -5,33 +5,19 @@ import { useEffect } from "react";
 import SyntaxSprint from "../SyntaxSprint/SyntaxSprint";
 import Header from "../Header/Header";
 
-
-
 const AppContainer = () => {
   useEffect(() => {
-    const theme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', theme);
+    const theme = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", theme);
   }, []);
 
   return (
     <>
-      <div className="window-container">        
+      <div className="window-container">
         <div className="game-wrapper">
           <Header />
           <SyntaxSprint />
         </div>
-        <footer>
-          <button className="made-by">
-            Made by{" "}
-            <a
-              href="https://www.github.com/rbrickmn"
-              target="_blank"
-              className="footer-link"
-            >
-              Riley
-            </a>
-          </button>
-        </footer>
       </div>
     </>
   );
