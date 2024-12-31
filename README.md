@@ -3,6 +3,8 @@
 
 > This project is just beginning! I have lots of new features planned - see "Roadmap" to find out what I'm working on!
 
+<a href="https://www.producthunt.com/posts/syntaxsprint?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-syntaxsprint" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=745484&theme=light" alt="SyntaxSprint - SyntaxSprint&#0044;&#0032;the&#0032;typing&#0032;test&#0032;for&#0032;programmers&#0033; | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+
 ## About This Project
 Welcome to SyntaxSprint! A syntax-based typing game that allows you to practice common code blocks, see your typing speed (WPM), and improve your knowledge by trying to lower your mistakes made!
 
