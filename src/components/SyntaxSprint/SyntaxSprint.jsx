@@ -155,6 +155,22 @@ const SyntaxSprint = () => {
     tryAgainButtonRef.current.blur();
   };
 
+  // Handles restarting the game with Enter key after a round has finished
+  useEffect(() => {
+    const handleRestartKey = (e) => {
+      if (e.key === "Enter" && gameStatus !== "playing") {
+        handleTryAgain();
+      }
+    };
+
+    window.addEventListener("keypress", handleRestartKey);
+
+    // Cleanup event listener
+    return () => {
+      window.removeEventListener("keypress", handleRestartKey);
+    };
+  }, [gameStatus, handleTryAgain]);
+
   return (
     <div className="container">
       <div className="text-block">
@@ -165,10 +181,18 @@ const SyntaxSprint = () => {
             {gameStatus === "playing" &&
               code.split("").map((char, idx) => {
                 // Access the CSS variable
-                let color = getComputedStyle(document.documentElement).getPropertyValue('--untyped-color') || "grey"; // Default color for untyped characters
-                let colorCorrectChar = getComputedStyle(document.documentElement).getPropertyValue('--correct-character-color') || "green";
-                let colorCurrentChar = getComputedStyle(document.documentElement).getPropertyValue('--current-character-color') || "black";
-
+                let color =
+                  getComputedStyle(document.documentElement).getPropertyValue(
+                    "--untyped-color"
+                  ) || "grey"; // Default color for untyped characters
+                let colorCorrectChar =
+                  getComputedStyle(document.documentElement).getPropertyValue(
+                    "--correct-character-color"
+                  ) || "green";
+                let colorCurrentChar =
+                  getComputedStyle(document.documentElement).getPropertyValue(
+                    "--current-character-color"
+                  ) || "black";
 
                 let currentClass = ""; // Default for current character class
 
