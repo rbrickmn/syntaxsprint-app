@@ -1,0 +1,97 @@
+.leaderboard-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.leaderboard-modal {
+  background-color: var(--background-container);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--primary);
+}
+
+.leaderboard-modal h2 {
+  margin-bottom: 20px;
+}
+
+.leaderboard-divider {
+  height: 2px;
+  background-color: var(--primary);
+  margin: 10px 0;
+}
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--primary);
+}
+
+.leaderboard-rank {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.leaderboard-name {
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.leaderboard-score {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.register-score {
+  margin-top: 20px;
+}
+
+.register-score input {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+}
+
+.register-score button {
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: var(--button-try-again-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-score button:hover {
+  background-color: var(--button-try-again-color-hover);
+}

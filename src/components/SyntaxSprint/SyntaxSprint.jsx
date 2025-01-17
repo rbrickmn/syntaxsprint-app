@@ -3,6 +3,7 @@ import Prism from "prismjs";
 import "prismjs/themes/prism.css";
 import "./SyntaxSprint.css";
 import SettingsPanel from "../SettingsPanel/SettingsPanel";
+import Leaderboard from "../LeaderBoard/LeaderBoard";
 import { jsSnippets } from "../../assets/js-snippets";
 
 const SyntaxSprint = () => {
@@ -29,6 +30,7 @@ const SyntaxSprint = () => {
   const [selectedTimeLimit, setSelectedTimeLimit] = useState(
     localStorage.getItem("selectedTimeLimit") || "15"
   );
+  const [minLeaderboardScore, setMinLeaderboardScore] = useState(null);
 
   const tryAgainButtonRef = useRef(null);
 
@@ -137,6 +139,32 @@ const SyntaxSprint = () => {
     localStorage.setItem("losses", losses);
   }, [losses]);
 
+  // Trigger leaderboard logic when game status changes
+  // Triggers : Win or loss
+  // Score Definition : wins - losses -> It can easily be chnaged to a different weighted scoring system or including other factors like mistakes
+  // minLeaderboardScore is defined to avoid unnecessary fetch requests after every win or loss to check if the score is greater than the minimum score in the leaderboard
+  useEffect(() => {
+    const score = wins - losses;
+    if (gameStatus !== "playing") {
+      if (minLeaderboardScore === null) {
+        fetch("https://syntaxsprint-backend.vercel.app/getleaderboard")
+          .then((response) => response.json())
+          .then((data) => {
+            const minScore = data.length < 10 ? 0 : data[data.length - 1].score;
+            console.log("Min leaderboard score:", minScore);
+            setMinLeaderboardScore(minScore);
+            if ((gameStatus === "win" || gameStatus === "lose") && score > minScore) {
+              setGameStatus("leaderboardregistration");
+            }
+          });
+      } else {
+        if ((gameStatus === "win" || gameStatus === "lose") && score > minLeaderboardScore) {
+          setGameStatus("leaderboardregistration");
+        }
+      } 
+    }
+  }, [gameStatus, minLeaderboardScore, wins, losses]);
+
   const handleTryAgain = () => {
     setInput("");
     setCurrentIndex(0);
@@ -153,6 +181,9 @@ const SyntaxSprint = () => {
     setCode(randomCode);
 
     tryAgainButtonRef.current.blur();
+  };
+  const updateMinLeaderboardScore = (minScore) => {
+    setMinLeaderboardScore(minScore);
   };
 
   return (
@@ -252,6 +283,15 @@ const SyntaxSprint = () => {
           onClose={() => setSettingsOpen(false)}
           onResetScores={resetScores} // Pass the resetScores function
           onTimeLimitChange={handleTimeLimitchange}
+        />
+      )}
+
+      {gameStatus === "leaderboardregistration" && (
+        <Leaderboard
+          score={wins - losses}
+          onRegister={handleTryAgain}
+          onClose={handleTryAgain}
+          updateMinLeaderboardScore={updateMinLeaderboardScore} // Pass the callback function
         />
       )}
     </div>
